@@ -1,9 +1,4 @@
 ﻿using CODE_WK3_FighterDecorator.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CODE_WK3_FighterDecorator.Decorators
 {
@@ -13,12 +8,11 @@ namespace CODE_WK3_FighterDecorator.Decorators
 
 		public ShotgunFighterDecorator(IFighter wrappee) : base(wrappee)
 		{
-			_wrappee = wrappee;
 		}
 
 		public override Attack Attack()
 		{
-			var attack = _wrappee.Attack();
+			var attack = base.Attack();
 			if (ShotgunRoundsFired < 2)
 			{
 				attack.Messages.Add("Shotgun: 20");

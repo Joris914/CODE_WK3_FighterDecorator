@@ -6,7 +6,6 @@ namespace CODE_WK3_FighterDecorator.Decorators
 	{
 		public StrengthenFighterDecorator(IFighter wrappee) : base(wrappee)
 		{
-			_wrappee = wrappee;
 			AttackValue += AttackValue / 10;
 			DefenseValue += DefenseValue / 10;
 		}

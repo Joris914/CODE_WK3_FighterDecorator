@@ -1,9 +1,5 @@
 ﻿using CODE_WK3_FighterDecorator.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CODE_WK3_FighterDecorator.Decorators
 {
@@ -14,14 +10,13 @@ namespace CODE_WK3_FighterDecorator.Decorators
 
 		public MinionFighterDecorator(IFighter wrappee) : base(wrappee)
 		{
-			_wrappee = wrappee;
-			MinionLives = _wrappee.Lives / 2;
-			MinionAttackValue = _wrappee.AttackValue / 2;
+			MinionLives = Lives / 2;
+			MinionAttackValue = AttackValue / 2;
 		}
 
 		public override Attack Attack()
 		{
-			var attack = _wrappee.Attack();
+			var attack = base.Attack();
 			if (MinionLives > 0)
 			{
 				attack.Messages.Add("Minion helping the attack: " + MinionAttackValue);
@@ -43,7 +38,7 @@ namespace CODE_WK3_FighterDecorator.Decorators
 				}
 				attack.Value -= Math.Max(0, tmpLives - MinionLives);
 			}
-			_wrappee.Defend(attack);
+			base.Defend(attack);
 		}
 	}
 }

@@ -1,9 +1,4 @@
 ﻿using CODE_WK3_FighterDecorator.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CODE_WK3_FighterDecorator.Decorators
 {
@@ -13,13 +8,12 @@ namespace CODE_WK3_FighterDecorator.Decorators
 
 		public PoisonFighterDecorator(IFighter wrappee) : base(wrappee)
 		{
-			_wrappee = wrappee;
 			PoisonStrength = 10;
 		}
 
 		public override Attack Attack()
 		{
-			var attack = _wrappee.Attack();
+			var attack = base.Attack();
 			if (PoisonStrength > 0)
 			{
 				attack.Messages.Add("Poison weakening, current value: " + PoisonStrength);

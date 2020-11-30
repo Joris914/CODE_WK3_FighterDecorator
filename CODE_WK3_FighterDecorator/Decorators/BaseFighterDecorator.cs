@@ -1,15 +1,10 @@
 ﻿using CODE_WK3_FighterDecorator.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CODE_WK3_FighterDecorator.Decorators
 {
 	public abstract class BaseFighterDecorator : IFighter
 	{
-		public IFighter _wrappee;
+		private IFighter _wrappee;
 
 		public BaseFighterDecorator(IFighter wrappee)
 		{

@@ -1,9 +1,5 @@
 ﻿using CODE_WK3_FighterDecorator.Decorators;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CODE_WK3_FighterDecorator.Model
 {

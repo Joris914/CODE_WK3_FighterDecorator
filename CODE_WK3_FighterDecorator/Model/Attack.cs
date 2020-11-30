@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace CODE_WK3_FighterDecorator.Model
 {
-    public class Attack
-    {
-        public IList<string> Messages { get; private set; }
-        public int Value { get; set; }
+	public class Attack
+	{
+		public IList<string> Messages { get; private set; }
+		public int Value { get; set; }
 
-        public Attack(string message, int value)
-        {
-            Messages = new List<string>();
-            Messages.Add(message);
+		public Attack(string message, int value)
+		{
+			Messages = new List<string>();
+			Messages.Add(message);
 
-            Value = value;
-        }
-    }
+			Value = value;
+		}
+	}
 }

@@ -1,9 +1,4 @@
 ﻿using CODE_WK3_FighterDecorator.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CODE_WK3_FighterDecorator.Decorators
 {
@@ -11,12 +6,11 @@ namespace CODE_WK3_FighterDecorator.Decorators
 	{
 		public DoubleHandedFighterDecorator(IFighter wrappee) : base(wrappee)
 		{
-			_wrappee = wrappee;
 		}
 
 		public override Attack Attack()
 		{
-			var attack = _wrappee.Attack();
+			var attack = base.Attack();
 			attack.Value += AttackValue;
 			attack.Messages.Add("Doubled the original attack value: " + AttackValue);
 			return attack;
@@ -26,7 +20,7 @@ namespace CODE_WK3_FighterDecorator.Decorators
 		{
 			attack.Messages.Add("One hand defended the attack: -" + DefenseValue);
 			attack.Value -= DefenseValue;
-			_wrappee.Defend(attack);
+			base.Defend(attack);
 		}
 	}
 }

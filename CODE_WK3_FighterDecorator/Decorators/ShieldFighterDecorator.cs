@@ -1,9 +1,4 @@
 ﻿using CODE_WK3_FighterDecorator.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CODE_WK3_FighterDecorator.Decorators
 {
@@ -12,7 +7,6 @@ namespace CODE_WK3_FighterDecorator.Decorators
 		public int ShieldDefends { get; set; }
 		public ShieldFighterDecorator(IFighter wrappee) : base(wrappee)
 		{
-			_wrappee = wrappee;
 			ShieldDefends = 3;
 		}
 
@@ -24,7 +18,7 @@ namespace CODE_WK3_FighterDecorator.Decorators
 				attack.Value = 0;
 				ShieldDefends--;
 			}
-			_wrappee.Defend(attack);
+			base.Defend(attack);
 		}
 	}
 }
