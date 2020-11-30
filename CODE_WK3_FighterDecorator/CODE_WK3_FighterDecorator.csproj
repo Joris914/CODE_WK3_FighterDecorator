@@ -86,6 +86,7 @@
     <Compile Include="Model\Fighter.cs" />
     <Compile Include="Model\FighterFactory.cs" />
     <Compile Include="Model\IFighter.cs" />
+    <Compile Include="Decorators\StrengthenFighterDecorator.cs" />
     <Compile Include="ViewModel\FighterOptionsViewModel.cs" />
     <Compile Include="ViewModel\FighterViewModel.cs" />
     <Compile Include="ListBoxExtenders.cs" />

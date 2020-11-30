@@ -38,16 +38,13 @@ namespace CODE_WK3_FighterDecorator.ViewModel
         {
             CreateFighterCommand = new RelayCommand(CreateFighter, () => _canCreateFighter);
             AttackCommand = new RelayCommand(Attack);
-            AttackValue = 15;
-            DefenseValue = 4;
-            Lives = 80;
 
             _fighterFactory = new FighterFactory();
 
             FighterMessages = new ObservableCollection<string>();
             InitializeOptionList();
 
-            _fighter = _fighterFactory.CreateFighter(Lives, AttackValue, DefenseValue, Enumerable.Empty<string>());
+            CreateFighter();
         }
 
         private void InitializeOptionList()
@@ -73,8 +70,13 @@ namespace CODE_WK3_FighterDecorator.ViewModel
 
         private void CreateFighter()
         {
+            AttackValue = 15;
+            DefenseValue = 4;
+            Lives = 80;
             var options = OptionList.Where(o => o.Selected).Select(o => o.Name);
             _fighter = _fighterFactory.CreateFighter(Lives, AttackValue, DefenseValue, options);
+            AttackValue = _fighter.AttackValue;
+            DefenseValue = _fighter.DefenseValue;
             _canCreateFighter = false;
             CreateFighterCommand.RaiseCanExecuteChanged();
         }

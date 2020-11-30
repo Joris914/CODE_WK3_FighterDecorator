@@ -26,9 +26,7 @@ namespace CODE_WK3_FighterDecorator.Model
 			FighterOptions[POISON] = "A poison for 5 time attacks.";
 			FighterOptions[SHIELD] = "Taking all your damase for 3 defenses.";
 			FighterOptions[SHOTGUN] = "Adding attack, needs reloading every 2 times.";
-
-			// TODO: Implement strengthen on fighter
-			//FighterOptions[STRENGTHEN] = "Increasing attack by 10%, increasing defense by 10%.";
+			FighterOptions[STRENGTHEN] = "Increasing attack by 10%, increasing defense by 10%.";
 		}
 
 		public IFighter CreateFighter(int lives, int attack, int defense, IEnumerable<string> options)
@@ -53,6 +51,9 @@ namespace CODE_WK3_FighterDecorator.Model
 						break;
 					case SHOTGUN:
 						fighter = new ShotgunFighterDecorator(fighter);
+						break;
+					case STRENGTHEN:
+						fighter = new StrengthenFighterDecorator(fighter);
 						break;
 				}
 			}
