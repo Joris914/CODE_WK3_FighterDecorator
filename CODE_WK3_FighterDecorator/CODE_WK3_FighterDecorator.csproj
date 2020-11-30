@@ -76,6 +76,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Decorators\BaseFighterDecorator.cs" />
+    <Compile Include="Decorators\DoubleHandedFighterDecorator.cs" />
+    <Compile Include="Decorators\MinionFighterDecorator.cs" />
+    <Compile Include="Decorators\PoisonFighterDecorator.cs" />
+    <Compile Include="Decorators\ShieldFighterDecorator.cs" />
+    <Compile Include="Decorators\ShotgunFighterDecorator.cs" />
     <Compile Include="Model\Attack.cs" />
     <Compile Include="Model\Fighter.cs" />
     <Compile Include="Model\FighterFactory.cs" />
